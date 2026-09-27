@@ -1,0 +1,54 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #171717;
+  background: #f5f5f5;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; }
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 48px max(24px, calc((100vw - 1120px) / 2));
+  background: #111;
+  color: #fff;
+}
+
+.topbar h1 { margin: 6px 0 8px; font-size: clamp(2rem, 5vw, 3.5rem); letter-spacing: -0.04em; }
+.topbar p { margin: 0; color: #bdbdbd; }
+.eyebrow { text-transform: uppercase; letter-spacing: .16em; font-size: .78rem; color: #bdbdbd; }
+.status { border: 1px solid #3f3f3f; border-radius: 999px; padding: 10px 14px; font-size: .85rem; white-space: nowrap; }
+.status.online { background: #1c3d2a; border-color: #2d6a45; }
+.status.offline { background: #4a2222; border-color: #743333; }
+
+.container { max-width: 1120px; margin: 0 auto; padding: 32px 24px 56px; }
+.toolbar { display: flex; align-items: center; gap: 12px; margin-bottom: 28px; }
+.toolbar label { font-weight: 700; }
+.toolbar input {
+  flex: 1; border: 1px solid #d8d8d8; border-radius: 12px; padding: 13px 14px; background: #fff;
+}
+.secondary { border: 1px solid #bbb; background: #fff; padding: 12px 16px; border-radius: 12px; cursor: pointer; }
+.hidden { display: none; }
+.message { text-align: center; padding: 56px 16px; color: #666; }
+.grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.card { background: #fff; border: 1px solid #e3e3e3; border-radius: 18px; overflow: hidden; box-shadow: 0 12px 32px rgba(0,0,0,.06); }
+.card-image { width: 100%; aspect-ratio: 16/10; object-fit: cover; background: #ededed; display: block; }
+.card-body { padding: 18px; }
+.badge { display: inline-block; font-size: .76rem; font-weight: 700; background: #f0f0f0; border-radius: 999px; padding: 6px 9px; margin-bottom: 12px; }
+.card-title { margin: 0; font-size: 1.25rem; }
+.card-model { margin: 6px 0 18px; color: #6f6f6f; }
+.card-price { font-size: 1.4rem; }
+
+@media (max-width: 850px) {
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topbar { flex-direction: column; }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  .toolbar { align-items: stretch; flex-direction: column; }
+  .topbar { padding-top: 34px; padding-bottom: 34px; }
+}
